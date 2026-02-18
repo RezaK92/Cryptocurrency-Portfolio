@@ -1,6 +1,6 @@
 # Cryptocurrency Portfolio Backtesting & Strategy Research (Python)
 
-This project is a **research + backtesting pipeline** for building and evaluating systematic cryptocurrency portfolios using real market data. It pulls the **top-N cryptocurrencies by market cap** (CoinGecko), downloads **5 years of daily prices** (Yahoo Finance via `yfinance`), constructs **trend-following** and **time-series momentum** signals, turns them into **portfolio weights**, and runs a full **performance evaluation** including benchmarks, transaction costs, out-of-sample testing, parameter sensitivity, and macro co-movement analysis. :contentReference[oaicite:0]{index=0}
+This project is a **research + backtesting pipeline** for building and evaluating systematic cryptocurrency portfolios using real market data. It pulls the **top-N cryptocurrencies by market cap** (CoinGecko), downloads **5 years of daily prices** (Yahoo Finance via `yfinance`), constructs **trend-following** and **time-series momentum** signals, turns them into **portfolio weights**, and runs a full **performance evaluation** including benchmarks, transaction costs, out-of-sample testing, parameter sensitivity, and macro co-movement analysis.
 
 ## What’s inside
 
