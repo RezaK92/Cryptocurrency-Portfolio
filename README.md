@@ -11,7 +11,7 @@ This project is a **research + backtesting pipeline** for building and evaluatin
   - selected cryptos
   - benchmarks: **S&P 500 (`^GSPC`)** and **NASDAQ 100 (`^NDX`)**
 - Saves everything into a single workbook: `crypto_data_5y.xlsx` with sheets:
-  - `crypto_prices`, `benchmarks`, `crypto_meta` :contentReference[oaicite:1]{index=1}
+  - `crypto_prices`, `benchmarks`, `crypto_meta`
 
 ### Step 2 — Cleaning + Returns + EDA
 - Filters assets by **coverage** (default: keep coins with at least **80%** valid data).
