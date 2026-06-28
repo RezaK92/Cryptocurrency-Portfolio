@@ -1,5 +1,6 @@
 # ============================
 # STEP 1: DATA DOWNLOAD + EXCEL
+# Comment: Fetch crypto/benchmark prices and save the raw input data for later steps.
 # ============================
 
 from dataclasses import dataclass
@@ -230,6 +231,7 @@ if __name__ == "__main__":
 
 # ================================
 # STEP 2: CLEANING + RETURNS + EDA
+# Comment: Clean missing values, compute returns, and inspect basic return relationships.
 # ================================
 
 import numpy as np
@@ -337,6 +339,7 @@ plot_correlation_matrix(crypto_ret.iloc[:, :15], "Crypto Correlation Matrix (Top
 
 # ============================
 # STEP 3: TREND-FOLLOWING SIGNALS
+# Comment: Generate moving-average and momentum trading signals.
 # ============================
 
 # Purpose:
@@ -442,6 +445,7 @@ plot_single_signal(example_asset, crypto_prices_clean, MOM_signal)
 
 # ================================
 # STEP 4: PORTFOLIO WEIGHTS
+# Comment: Convert trading signals into long-only and long/short portfolio weights.
 # ================================
 
 # Purpose:
@@ -700,6 +704,7 @@ print(MA_weights.sum(axis=1).head(10))
 
 # ================================
 # STEP 5: BACKTESTING & PERFORMANCE
+# Comment: Compute strategy returns, equity curves, benchmarks, and performance metrics.
 # ================================
 
 # Purpose:
@@ -954,6 +959,7 @@ print(perf_table.round(4))
 
 # ================================
 # STEP 6: TRANSACTION COSTS
+# Comment: Estimate turnover and subtract trading costs from gross returns.
 # ================================
 
 # Purpose:
@@ -1060,6 +1066,7 @@ print("   MOM_vol_weights_full.csv")
 
 # ================================
 # STEP 7: OUT-OF-SAMPLE EVALUATION
+# Comment: Split the data into train/test windows to check strategy stability.
 # ================================
 
 # Purpose:
@@ -1136,6 +1143,7 @@ plt.show()
 
 # ================================
 # STEP 8: SENSITIVITY ANALYSIS (MA)
+# Comment: Test different moving-average parameters and rebalance frequencies.
 # ================================
 
 ma_params_list = [(20, 100), (50, 200), (100, 300)]
@@ -1176,6 +1184,7 @@ print(ma_sensitivity_df.round(4))
 
 # ================================
 # STEP 8b: SENSITIVITY (MOMENTUM)
+# Comment: Test different momentum lookbacks and rebalance frequencies.
 # ================================
 
 mom_lookbacks = [90, 180, 252, 360]
@@ -1214,6 +1223,7 @@ print(mom_sensitivity_df.round(4))
 
 # ================================
 # STEP 9: CO-MOVEMENT WITH MACRO & COMMODITIES
+# Comment: Compare strategy returns with equity, commodity, and volatility factors.
 # ================================
 
 import statsmodels.api as sm
@@ -1306,6 +1316,7 @@ print(regression_summary(aligned_df["MOM"], aligned_df[["SP500", "NASDAQ100", "G
 
 # ================================
 # STEP 10: LLM-STYLE SENTIMENT FILTER (FEAR & GREED)
+# Comment: Use the Fear & Greed Index as a sentiment filter for MA signals.
 # ================================
 
 # Purpose:
